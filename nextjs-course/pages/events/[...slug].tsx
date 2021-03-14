@@ -1,5 +1,9 @@
 function FilteredEventsPage() {
-  return <h1>Events filter page</h1>;
+  return (
+    <div>
+      <h1>Events filter page</h1>
+    </div>
+  );
 }
 
 export default FilteredEventsPage;
