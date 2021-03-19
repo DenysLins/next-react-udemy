@@ -3,3 +3,7 @@
   max-width: 40rem;
   margin: 5rem auto;
 }
+
+.list ul {
+  padding: 0px;
+}
