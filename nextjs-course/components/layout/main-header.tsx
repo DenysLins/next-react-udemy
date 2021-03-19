@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../styles/main-header.module.css";
+import styles from "../../styles/layout/main-header.module.css";
 
 function MainHeader() {
   return (

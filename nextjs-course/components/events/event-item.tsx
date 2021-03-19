@@ -1,4 +1,4 @@
-import styles from "../../styles/event-item.module.css";
+import styles from "../../styles/event/event-item.module.css";
 import AddressIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import DateIcon from "../icons/date-icon";

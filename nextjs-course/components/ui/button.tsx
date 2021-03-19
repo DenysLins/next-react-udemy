@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../styles/button.module.css";
+import styles from "../../styles/ui/button.module.css";
 
 function Button(props) {
   return (
