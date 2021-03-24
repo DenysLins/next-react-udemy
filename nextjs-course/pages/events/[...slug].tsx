@@ -2,6 +2,8 @@ import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 import EventList from '../../components/events/event-list'
 import ResultsTitle from '../../components/results-title/results-title'
+import Button from '../../components/ui/button'
+import ErrorAlert from '../../components/ui/error-alert'
 import { getFilteredEvents } from '../../dummy-data'
 
 function FilteredEventsPage () {
@@ -26,7 +28,16 @@ function FilteredEventsPage () {
     numMonth < 1 ||
     numMonth > 12
   ) {
-    return <p className="center">Invalid filter. Please adjust your values!</p>
+    return (
+      <Fragment>
+        <div className="center">
+          <ErrorAlert>
+            <p>Invalid filter. Please adjust your values!</p>
+          </ErrorAlert>
+          <Button link="/events">Show All Events</Button>
+        </div>
+      </Fragment>
+    )
   }
 
   const events = getFilteredEvents({
@@ -35,7 +46,16 @@ function FilteredEventsPage () {
   })
 
   if (!events || events.length === 0) {
-    return <p className="center">No events found!</p>
+    return (
+      <Fragment>
+        <div className="center">
+          <ErrorAlert>
+            <p>No events found for the chosen filter!</p>
+          </ErrorAlert>
+          <Button link="/events">Show All Events</Button>
+        </div>
+      </Fragment>
+    )
   }
 
   const date = new Date(numYear, numMonth)
