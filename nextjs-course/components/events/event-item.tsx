@@ -1,37 +1,37 @@
-import styles from "../../styles/event/event-item.module.css";
-import AddressIcon from "../icons/address-icon";
-import ArrowRightIcon from "../icons/arrow-right-icon";
-import DateIcon from "../icons/date-icon";
-import Button from "../ui/button";
+import styles from '../../styles/event/event-item.module.css'
+import AddressIcon from '../icons/address-icon'
+import ArrowRightIcon from '../icons/arrow-right-icon'
+import DateIcon from '../icons/date-icon'
+import Button from '../ui/button'
 
-function EventItem(props) {
+function EventItem (props) {
   const {
     id,
     image,
     title,
     date,
-    location,
+    location
   }: {
     id: string;
     image: string;
     title: string;
     date: string;
     location: string;
-  } = props.event;
+  } = props.event
 
-  const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
 
-  const formattedAddress = location.replace(", ", "\n");
+  const formattedAddress = location.replace(', ', '\n')
 
-  const exploreLink = `/events/${id}`;
+  const exploreLink = `/events/${id}`
 
   return (
     <li className={styles.item}>
-      <img src={image} alt={title} />
+      <img src={`/${image}`} alt={title} />
       <div className={styles.content}>
         <div className={styles.summary}>
           <h2>{title}</h2>
@@ -54,6 +54,6 @@ function EventItem(props) {
         </div>
       </div>
     </li>
-  );
+  )
 }
-export default EventItem;
+export default EventItem

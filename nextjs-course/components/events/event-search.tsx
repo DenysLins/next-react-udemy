@@ -1,17 +1,17 @@
-import { useRef } from "react";
-import styles from "../../styles/event/event-search.module.css";
-import Button from "../ui/button";
+import { useRef } from 'react'
+import styles from '../../styles/event/event-search.module.css'
+import Button from '../ui/button'
 
-function EventSearch(props) {
-  const yearInputRef = useRef();
-  const monthInputRef = useRef();
-  function submitHandler(event) {
-    event.preventDefault();
+function EventSearch (props) {
+  const yearInputRef = useRef()
+  const monthInputRef = useRef()
+  function submitHandler (event) {
+    event.preventDefault()
 
-    const selectedYear = yearInputRef.current.value;
-    const selectedMonth = monthInputRef.current.value;
+    const selectedYear = yearInputRef.current.value
+    const selectedMonth = monthInputRef.current.value
 
-    props.onSearch(selectedYear, selectedMonth);
+    props.onSearch(selectedYear, selectedMonth)
   }
   return (
     <form className={styles.form} onSubmit={submitHandler}>
@@ -45,7 +45,7 @@ function EventSearch(props) {
         <Button>Find Events</Button>
       </div>
     </form>
-  );
+  )
 }
 
-export default EventSearch;
+export default EventSearch

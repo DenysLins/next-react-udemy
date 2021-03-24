@@ -1,22 +1,22 @@
-import classes from "../../styles/event/event-logistics.module.css";
-import AddressIcon from "../icons/address-icon";
-import DateIcon from "../icons/date-icon";
-import LogisticsItem from "./logistics-item";
+import classes from '../../styles/event/event-logistics.module.css'
+import AddressIcon from '../icons/address-icon'
+import DateIcon from '../icons/date-icon'
+import LogisticsItem from './logistics-item'
 
-function EventLogistics(props) {
+function EventLogistics (props) {
   const {
     date,
     address,
     image,
-    imageAlt,
-  }: { date: string; address: string; image: string; imageAlt: string } = props;
+    imageAlt
+  }: { date: string; address: string; image: string; imageAlt: string } = props
 
-  const humanReadableDate: string = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-  const addressText: string = address.replace(", ", "\n");
+  const humanReadableDate: string = new Date(date).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
+  const addressText: string = address.replace(', ', '\n')
 
   return (
     <section className={classes.logistics}>
@@ -32,7 +32,7 @@ function EventLogistics(props) {
         </LogisticsItem>
       </ul>
     </section>
-  );
+  )
 }
 
-export default EventLogistics;
+export default EventLogistics

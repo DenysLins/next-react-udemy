@@ -1,18 +1,18 @@
-import styles from "../../styles/event/event-list.module.css";
-import { Event } from "../../types/event";
-import EventItem from "./event-item";
+import styles from '../../styles/event/event-list.module.css'
+import { Event } from '../../types/event'
+import EventItem from './event-item'
 
-function EventList(props) {
-  const { events }: { events: Event[] } = props;
+function EventList (props) {
+  const { events }: { events: Event[] } = props
   return (
     <div className={styles.list}>
       <ul>
         {events.map((event: Event) => {
-          return <EventItem key={event.id} event={event} />;
+          return <EventItem key={event.id} event={event} />
         })}
       </ul>
     </div>
-  );
+  )
 }
 
-export default EventList;
+export default EventList

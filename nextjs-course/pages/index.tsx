@@ -1,9 +1,8 @@
-import React from "react";
-import EventList from "../components/events/event-list";
-import { getFeaturedEvents } from "../dummy-data";
+import EventList from '../components/events/event-list'
+import { getFeaturedEvents } from '../dummy-data'
 
-export default function Home() {
-  const featuredEvents = getFeaturedEvents();
+export default function Home () {
+  const featuredEvents = getFeaturedEvents()
 
-  return <EventList events={featuredEvents} />;
+  return <EventList events={featuredEvents} />
 }

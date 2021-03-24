@@ -1,7 +1,7 @@
-import Link from "next/link";
-import styles from "../../styles/layout/main-header.module.css";
+import Link from 'next/link'
+import styles from '../../styles/layout/main-header.module.css'
 
-function MainHeader() {
+function MainHeader () {
   return (
     <header className={styles.header}>
       <title>Events</title>
@@ -17,7 +17,7 @@ function MainHeader() {
         </ul>
       </nav>
     </header>
-  );
+  )
 }
 
-export default MainHeader;
+export default MainHeader
