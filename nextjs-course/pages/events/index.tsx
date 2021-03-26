@@ -3,8 +3,8 @@ import EventList from '../../components/events/event-list'
 import EventSearch from '../../components/events/event-search'
 import { getAllEvents } from '../../data/dummy-data'
 
-function EventsPage () {
-  const events = getAllEvents()
+export default function EventsPage (props) {
+  const events = props.events
   const router = useRouter()
 
   function findEventsHandler (year, month) {
@@ -16,8 +16,15 @@ function EventsPage () {
     <div>
       <EventSearch onSearch={findEventsHandler} />
       <EventList events={events}></EventList>
+      <div className="center">This page was generated at build time.</div>
     </div>
   )
 }
 
-export default EventsPage
+export async function getStaticProps () {
+  return {
+    props: {
+      events: getAllEvents()
+    }
+  }
+}
