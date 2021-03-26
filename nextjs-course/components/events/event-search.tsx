@@ -3,8 +3,8 @@ import styles from '../../styles/event/event-search.module.css'
 import Button from '../ui/button'
 
 function EventSearch (props) {
-  const yearInputRef = useRef()
-  const monthInputRef = useRef()
+  const yearInputRef = useRef(null)
+  const monthInputRef = useRef(null)
   function submitHandler (event) {
     event.preventDefault()
 
