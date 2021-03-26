@@ -17,8 +17,9 @@ export default function EventsPage (props) {
       <EventSearch onSearch={findEventsHandler} />
       <EventList events={events}></EventList>
       <div className="center">
-        This page was generated at build time, in the build machine. These three
-        Events were collected from the database in the build event.
+        This page was generated at build time (Static Site Generation - SSG), in
+        the build machine. These three Events were collected from the database
+        in the build event.
       </div>
     </div>
   )

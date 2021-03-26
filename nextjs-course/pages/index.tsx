@@ -9,8 +9,9 @@ export default function Home (props) {
     <Fragment>
       <EventList events={featuredEvents} />
       <div className="center">
-        This page was generated at build time, in the build machine. These two
-        Featured Events were collected from the database in the build event.
+        This page was generated at build time (Static Site Generation - SSG), in
+        the build machine. These two Featured Events were collected from the
+        database in the build event.
       </div>
     </Fragment>
   )
