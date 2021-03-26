@@ -8,7 +8,10 @@ export default function Home (props) {
   return (
     <Fragment>
       <EventList events={featuredEvents} />
-      <div className="center">This page was generated at build time, in the build machine</div>
+      <div className="center">
+        This page was generated at build time, in the build machine. These two
+        Featured Events were collected from the database in the build event.
+      </div>
     </Fragment>
   )
 }
