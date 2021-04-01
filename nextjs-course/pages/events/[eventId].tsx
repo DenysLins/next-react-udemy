@@ -1,18 +1,15 @@
-import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 import EventContent from '../../components/event-detail/event-content'
 import EventLogistics from '../../components/event-detail/event-logistics'
 import EventSummary from '../../components/event-detail/event-summary'
-import { getEventById } from '../../data/dummy-data'
+import { getAllEvents, getEventById } from '../../data/dummy-data'
 import { Event } from '../../types/event'
 
-function EventsDetailPage () {
-  const router = useRouter()
-  const eventId = router.query.eventId
-  const event: Event = getEventById(eventId)
+export default function EventsDetailPage (props) {
+  const { event } = props
 
   if (!event) {
-    return <p>No event found</p>
+    return <div className="center">Loading...</div>
   }
 
   return (
@@ -27,8 +24,34 @@ function EventsDetailPage () {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <div className="center">
+        This dynamic page was generated at build time (Dynamic Static Site
+        Generation - SSG), in the build machine.
+      </div>
     </Fragment>
   )
 }
 
-export default EventsDetailPage
+export async function getStaticProps (context) {
+  const { params } = context
+  const eventId = params.eventId
+  const event: Event = getEventById(eventId)
+  return {
+    props: {
+      event: event
+    }
+  }
+}
+
+export async function getStaticPaths () {
+  const events = getAllEvents()
+  const ids = events.map((event) => event.id)
+  const idParams = ids.map((id) => ({
+    params: { eventId: id }
+  }))
+
+  return {
+    paths: idParams,
+    fallback: false
+  }
+}
