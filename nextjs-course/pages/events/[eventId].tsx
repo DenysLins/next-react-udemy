@@ -36,6 +36,13 @@ export async function getStaticProps (context) {
   const { params } = context
   const eventId = params.eventId
   const event: Event = getEventById(eventId)
+
+  if (!event) {
+    return {
+      notFound: true
+    }
+  }
+
   return {
     props: {
       event: event
@@ -52,6 +59,6 @@ export async function getStaticPaths () {
 
   return {
     paths: idParams,
-    fallback: false
+    fallback: true
   }
 }
